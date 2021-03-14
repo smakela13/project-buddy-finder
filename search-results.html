@@ -9,16 +9,28 @@
      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
      crossorigin=""/>
       <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-  crossorigin=""></script>
+  
   <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Document</title>
+    <title>Buddy Finder Search Results</title>
 </head>
 <body>
+    <div class="p-0">
+        <div class="border-r shadow p-5 bg-green-500">
+            <h2 class="text-center text-3xl text-gray-600">Search Results</h2>
+        </div>
+    </div>
+    <div class="container px-4 ">
+        <div class="p-10 mr-20">
+            <h2 class="text-left text-3xl text-gray-600">Pick Your Desired Shelter:</h2>
+            <div id="result-content"></div>
+        </div>
+    </div>
+
     <div id="mapid"></div>
 
     <script src="/assets/js/script.js"></script>
-  
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>  
 </body>
 </html>

@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <title>Buddy Finder</title>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
+    <header class="p-0">
+        <div class="border-r shadow p-5 bg-green-500">
+            <h1 class="text-center text-3xl text-gray-600 logo">Buddy Finder</h1>
+        </div>
+    </header>
+    <main class="container px-4 flex-grow">
+        <div class="p-10 mr-20">
+            <form id="buddy-form">
+            <h2 class="text-left text-3xl text-gray-600">Find Shelters</h2>
+                <div class="relative text-gray-700">
+                    <input class="w-full h-10 pl-3 pr-5 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+                        placeholder="ZIP Code" id="zipcode" />
+                    <button
+                        class="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-white bg-green-500 rounded-r-lg" id="search-button">Click</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="container">
+        <div id="previously-viewed"></div>
+    </div>
+
+    <footer class="container">
+            <h3 class="text-center text-xl text-gray-600 logo">Created with 🐾 by ...</h1>
+    </footer>
+
     <div id="mapid"></div>
-<script src="/assets/js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
