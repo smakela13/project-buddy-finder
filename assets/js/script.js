@@ -1,5 +1,6 @@
 var searchZip = document.querySelector("#zipcode");
 var searchBtn = document.querySelector("#search-button");
+var map = document.querySelector("#mapdiv");
 var result;
 
 
@@ -26,12 +27,12 @@ function getZipCode(event) {
 
 searchBtn.addEventListener("click", getZipCode);
 
-{/* <a class="btn" href="URL goes in here">Submit</a> */ }
+/* <a class="btn" href="URL goes in here">Submit</a> */
 // fetch("https://api.mapbox.com/geocoding/v5/mapbox.postcode/+ziptxt+.json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbTd6eHoxNzEyeGwydXMzcWFybHp6MmgifQ.zZ3yEJs-XX_N5SZIPaiaBw")
 
 
 
-var map = L.map('map').setView([-78.94, 35.9], 15);
+var map = L.map('mapid').setView([-78.94, 35.9], 15);
 L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}',
     {
         attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
