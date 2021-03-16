@@ -32,7 +32,7 @@ searchBtn.addEventListener("click", getZipCode);
 
 
 var map = L.map('map').setView([-78.94, 35.9], 15);
-L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}',
     {
         attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
         maxZoom: 17,
