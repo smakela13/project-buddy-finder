@@ -1,9 +1,7 @@
 var searchZip = document.querySelector("#zipcode");
 var searchBtn = document.querySelector("#search-button");
-var map = document.querySelector("#mapdiv");
+var map = document.querySelector("#map");
 var result;
-
-
 
 function getZipCode(event) {
     event.preventDefault();
@@ -24,13 +22,10 @@ function getZipCode(event) {
 
 }
 
-
 searchBtn.addEventListener("click", getZipCode);
 
 /* <a class="btn" href="URL goes in here">Submit</a> */
 // fetch("https://api.mapbox.com/geocoding/v5/mapbox.postcode/+ziptxt+.json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbTd6eHoxNzEyeGwydXMzcWFybHp6MmgifQ.zZ3yEJs-XX_N5SZIPaiaBw")
-
-
 
 var map = L.map('mapid').setView([-78.94, 35.9], 15);
 L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}',
