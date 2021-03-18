@@ -11,35 +11,53 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Buddy Finder</title>
 </head>
 
 <body class="flex flex-col min-h-screen">
+    
     <header class="p-0">
         <div class="border-r shadow p-5 bg-green-500">
             <h1 class="text-center text-3xl text-gray-600 logo">Buddy Finder</h1>
         </div>
     </header>
+          
     <main class="container px-4 flex-grow">
         <div class="p-10 mr-20">
+            
+            
+
+
+            
+            
             <form id="buddy-form">
                 <h2 class="text-left text-3xl text-gray-600">Find Shelters</h2>
                 <div class="relative text-gray-700">
                     <input
                         class="w-full h-10 pl-3 pr-5 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                         placeholder="ZIP Code" id="zipcode" />
+                    
                     <button
                         class="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-white bg-green-500 rounded-r-lg"
                         id="search-button">Click</button>
                 </div>
             </form>
+        
+            <!-- A new container for printing generated shelter links -->
+            <div id="result-log" class="container">
+                <!-- shelter buttons are created here here                     -->    
+            </div>
+        
+        
+        
         </div>
     </main>
     <div class="container">
         <div id="previously-viewed"></div>
     </div>
 
+    <div id="mapdiv"></div>
     <footer class="container">
         <h3 class="text-center text-xl text-gray-600 logo">Created with 🐾 by ...</h3>
     </footer>
