@@ -1,9 +1,35 @@
 body {
     background-color: antiquewhite;
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+
+}
+nav{
+    
+        height: 90px;
+        line-height: 73px;
+      }
+      
+
+
+
+.brand-logo {
+    height: 90px;
+    line-height: 73px;
+    font-family: 'Redressed', sans-serif;
+    font-size: 50px;
+    color: rgb(197, 195, 195);
+
+    
+    
+    
+
+
 }
 
-h1 {
+h1 , h2 {
     font-family: 'Redressed', sans-serif;
     text-decoration: underline;
 }
@@ -11,8 +37,9 @@ h1 {
 .logo {
     font-family: 'Redressed', sans-serif;
 }
+#mapid { height: 1800px; };
 
-#map { 
-    height: 580px;
-    width: 900px  
+#searchResults{
+    font-family: 'Redressed', sans-serif;
+    text-decoration: underline;
 }

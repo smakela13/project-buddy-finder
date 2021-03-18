@@ -1,67 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Buddy Finder</title>
 </head>
-<body class="flex flex-col min-h-screen">
-    
-    <header class="p-0">
-        <div class="border-r shadow p-5 bg-green-500">
-            <h1 class="text-center text-3xl text-gray-600 logo">Buddy Finder</h1>
+
+<body>
+    <!-- Title on Navbar -->
+    <nav>
+        <div class="nav-wrapper red lighten-2">
+            <div class="font-new brand-logo center">Buddy Finder</div>
         </div>
-    </header>
-          
-    <main class="container px-4 flex-grow">
-        <div class="p-10 mr-20">
-            
-            
-
-
-            
-            
-            <form id="buddy-form">
-                <h2 class="text-left text-3xl text-gray-600">Find Shelters</h2>
-                
-                <div class="relative text-gray-700">
-                    
-                    <input class="w-full h-10 pl-3 pr-5 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-                        placeholder="ZIP Code" id="zipcode" />
-                    
-                    <button
-                    class="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-white bg-green-500 rounded-r-lg" id="search-button">Submit</button>
+    </nav>
+    <!-- ZIP Code Search -->
+    <main>
+        <div class="row">
+            <div class="col s12 m5 l3">
+                <div class="row">
+                    <form id="buddy-form" class="col s12">
+                        <h5>Find Shelters:</h5>
+                        <div class="row">
+                            <div class="input-field col s9 l10">
+                                <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
+                            </div>
+                            <div class="input-field col s3 l2">
+                                <a href="search-results.html" class="btn waves-effect waves-light red lighten-2" id="search-button"><i
+                                        class="material-icons">search</i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Previously Searched Shelters -->
+                    <div id="previously-searched"></div>
                 </div>
-            </form>
-        
-            <!-- A new container for printing generated shelter links -->
-            <div id="result-log" class="container">
-                <!-- shelter buttons are created here here                     -->    
             </div>
-        
-        
-        
+            <!-- Shelter Results -->
+            <div id="result-log" class="col s12 m7 l9"></div>
         </div>
-    </main>
-    <div class="container">
-        <div id="previously-viewed"></div>
-    </div>
 
-    <div id="mapdiv"></div>
-    <footer class="container">
-            <h3 class="text-center text-xl text-gray-600 logo">Created with 🐾 by ...</h1>
+        <!-- Recently viewed shelters -->
+        <div id="previously-viewed" class="col s12 m7 l9"></div>
+
+        <div id="map"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer cyan darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Created with 🐾 by ...</h5>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021
+                <a class="grey-text text-lighten-4 right"
+                    href="https://github.com/smakela13/project-buddy-finder">GitHub
+                    Repo</a>
+            </div>
+        </div>
     </footer>
+    <!-- Scripts -->
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-<script src="./assets/js/script.js"></script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/petfinder.js"></script>
 </body>
+
 </html>
