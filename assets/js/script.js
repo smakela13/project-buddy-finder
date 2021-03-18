@@ -1,9 +1,5 @@
 // _________PETFINDER SCRIPT STARTS HERE___________
 
-let apiKey = "mPLuBul6G12XM99wSZsV1LJj4B1RnvgKYo7qZThtAvoM6uNqun"; // put your key here
-let secret = "uMuiXKqNHfLNcLsmyuEhA0P26uZrjhS5yzZpIH9Y"; // put your secret here
-let token;
-let testURL = "https://api.petfinder.com/v2/animals";
 
 // form element variable
 var buddyFormEl = document.querySelector("#buddy-form");
@@ -14,26 +10,6 @@ var inputEl = document.querySelector("#zipcode");
 // card container div element variable
 var cardContainerEl = document.querySelector("#previously-viewed");
 
-// GETTING TOKEN FROM PETFINDER
-// This is the function to get the token from petfinder. It must start FIRST.
-
-function getToken() {
-    fetch("https://api.petfinder.com/v2/oauth2/token", {
-        body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        method: "POST"
-    }).then(response => response.json())
-        .then((data) => {
-            console.log("Token response: ", data);
-            if (data.access_token) {
-                token = data.access_token;
-                // function call #2: Calls to get data from local storage ********** 
-                getStoredOrgs();
-            }
-        });
-}
 
 // GETTING DATA FROM LOCAL STORAGE
 
@@ -68,39 +44,35 @@ function getStoredOrgs() {
     }
 }
 
+getStoredOrgs();
+
 // SUBMIT ZIPCODE
 
 function formSubmitHandler(event) {
     event.preventDefault();
+    
+    var zipcodeEntered = inputEl.value.trim();
+    console.log(zipcodeEntered);
 
-    if (token) {
-        var zipcodeEntered = inputEl.value.trim();
-        console.log(zipcodeEntered);
-
-        if (zipcodeEntered) {
-            // function call #3: Calls to search petfinder with the input **********
+    if (zipcodeEntered) {
+        // function call #3: Calls to search petfinder with the input **********
+        // searchPetfinder(zipcodeEntered);
             
-            searchPetfinder(zipcodeEntered);
-            
-            inputEl.value = "";
-            //  To be checked:  ex: activeCityNameEl.textContent = ""; - ANY FIELD TO BE EMPTIED HERE!
-            //  To be done: USE MODALS INSTEAD OF ALERTS
+        // THIS CODE WILL TAKE US TO THE RESULTS PAGE
+        var queryString = "./search-results.html?q=" + zipcodeEntered;
+        location.assign(queryString);
 
-        } else {
-            alert("Please enter a zipcode");
-        }
+        inputEl.value = "";
+        //  To be checked:  ex: activeCityNameEl.textContent = ""; - ANY FIELD TO BE EMPTIED HERE!
+        //  To be done: USE MODALS INSTEAD OF ALERTS
 
     } else {
-        alert(`We don't have a token`);
+        alert("Please enter a zipcode");
     }
+    
 };
 
 // SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-// THIS STARTS EVERYTHING!
-// function call #1 : to get the token from petfinder **********
-getToken();
 
-// example
-// let queryURL = "https://api.petfinder.com/v2/organizations/?location=27516&distance=10&limit=5";
