@@ -29,9 +29,13 @@ nav{
 
 }
 
-h1 , h2 {
+h1 , h2, h5 {
     font-family: 'Redressed', sans-serif;
     text-decoration: underline;
+    color:rgb(197, 195, 195);
+    font-size: 40px;
+    margin-right: 10px;
+
     
 }
 
@@ -43,4 +47,8 @@ h1 , h2 {
 #searchResults{
     font-family: 'Redressed', sans-serif;
     text-decoration: underline;
+}
+.container{
+    font-family: 'Redressed', sans-serif;
+    font-size: 20px;
 }
