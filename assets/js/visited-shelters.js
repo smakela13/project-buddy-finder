@@ -1,13 +1,11 @@
-
 // GETTING THE ZIPCODE FROM THE URL
 
 function getParZipcode() {
-    // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var parZipcode = document.location.search.split('=').pop();
     console.log(parZipcode);
-    
+
     printMap(parZipcode);
-  }
+}
 
 // SHOWING THE MAP FOR THE PICKED SHELTER
 
@@ -64,14 +62,4 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
 
-// console.log('about to build the map', postcode);
-
-
-// THIS STARTS EVERYTHING!
-// function call #1 : to get the token from petfinder **********
-getToken();
-
-// example
-// let queryURL = "https://api.petfinder.com/v2/organizations/?location=27516&distance=10&limit=5";
-
-
+getParZipcode();
