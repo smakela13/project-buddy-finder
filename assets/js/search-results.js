@@ -33,6 +33,7 @@ function getParZipcode() {
     // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var parZipcode = document.location.search.split('=').pop();
     console.log(parZipcode);
+    
     searchPetfinder(parZipcode);
   }
 
@@ -177,32 +178,6 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 
 // console.log('about to build the map', postcode);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // THIS STARTS EVERYTHING!
