@@ -15,7 +15,7 @@ nav{
 
 
 
-.brand-logo, #header {
+.brand-logo {
     height: 90px;
     line-height: 73px;
     font-family: 'Redressed', sans-serif;
@@ -32,7 +32,6 @@ nav{
 h1 , h2 {
     font-family: 'Redressed', sans-serif;
     text-decoration: underline;
-    
 }
 
 .logo {
