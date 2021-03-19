@@ -24,7 +24,7 @@ function getStoredOrgs() {
         var orgPrevViewed = document.querySelector("#previously-viewed");
         var storedBtn = document.createElement("button");
 
-        storedBtn.classList.add("btn waves-effect waves-light deep-orange lighten-2 center-align text-white");
+        storedBtn.classList.add("btn", "waves-effect", "waves-light", "deep-orange", "lighten-2", "center-align", "text-white");
 
         prevViewedHeader.textContent = "Previously Viewed Shelters";
         storedBtn.textContent = storedOrg.name + " - " + storedOrg.city + ", " + storedOrg.state;
@@ -81,7 +81,7 @@ function formSubmitHandler(event) {
         //  To be done: USE MODALS INSTEAD OF ALERTS
 
     } else {
-        alert("Please enter a zipcode");
+        alert("Please enter a ZIP code");
     }
     
 }

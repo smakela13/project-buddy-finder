@@ -26,6 +26,10 @@ nav .brand-logo {
   font-size: 3.75rem;
 }
 
+nav div a {
+    text-decoration: none;
+}
+
 /* Button and link styles */
 a {
     color: white;
@@ -39,7 +43,7 @@ button {
 
 /* Map style */
 #mapid { 
-    height: 600px;
+    height: 500px;
     width: 800px;
 }
 
