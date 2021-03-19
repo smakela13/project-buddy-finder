@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -23,43 +24,64 @@
             <div class="font-new brand-logo center">Buddy Finder</div>
         </div>
     </nav>
-    <!-- ZIP Code Search -->
     <main>
+        <!-- Buddy Finder Image -->
         <div class="row">
-            <div class="col s12 m5 l3">
+            <div class="section">
+            <div class="col s12 center">
+                <img src="./assets/images/Buddy_Finder_1.jpg" alt="Buddy Finder">
+            </div>
+            </div>
+        </div>
+        <!-- ZIP Code Search -->
+        <div class="row">
+            <div class="col s12 center">
                 <div class="row">
                     <form id="buddy-form" class="col s12">
                         <h5>Find Shelters:</h5>
                         <div class="row">
-                            <div class="input-field col s9 l10">
+                            <div class="input-field col offset-s9 s9 offset-l4 l4">
                                 <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
                             </div>
-                            <div class="input-field col s3 l2">
+                            <div class="input-field col s3 l1">
                                 <button class="btn waves-effect waves-light red lighten-2" id="search-button"><i
                                         class="material-icons">search</i>
                                 </button>
                             </div>
                         </div>
                     </form>
-                    <!-- Previously Searched Shelters -->
-                    <div id="previously-searched"></div>
                 </div>
             </div>
-            <!-- Shelter Results -->
-            <div id="result-log" class="col s12 m7 l9"></div>
         </div>
-
         <!-- Recently viewed shelters -->
-        <div id="previously-viewed" class="col s12 m7 l9"></div>
-
-        <div id="map"></div>
+        <h5 id="previously-viewed-header" class="center"></h5>
+        <div id="previously-viewed" class="col s12 m7 l9 center"></div>
+            <!-- Pete's Pet Shop Image -->
+            <div class="row">
+                <div class="section">
+                    <div class="col s12 center">
+                        <img src="./assets/images/Petes_Pet_Shop_1.jpg" alt="Pete's Pet Shop">
+                    </div>
+                </div>
+            </div>
+        <!-- Map -->
+        <div id="mapid"></div>
     </main>
     <!-- Footer -->
-    <footer class="page-footer cyan darken-2">
+    <footer class="page-footer red lighten-2">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Created with 🐾 by ...</h5>
+                    <h5 class="white-text">Created with 🐾 by Project SARD <br /></h5> 
+                    <p class="white-text text-lighten-4">Buddy Finder is a website designed to find loving homes for abandoned pets. Project SARD aims to rescue all animals in need across the nation.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li><a class="white-text text-lighten-3" href="https://github.com/smakela13/">Sarah M.</a></li>
+                        <li><a class="white-text text-lighten-3" href="https://github.com/AranATA/">Ali A.</a></li>
+                        <li><a class="white-text text-lighten-3" href="https://github.com/Vinyl77/">Richard Y.</a></li>
+                        <li><a class="white-text text-lighten-3" href="https://github.com/hov92/">Dwayne H.</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -67,18 +89,15 @@
             <div class="container">
                 © 2021
                 <a class="grey-text text-lighten-4 right"
-                    href="https://github.com/smakela13/project-buddy-finder">GitHub
-                    Repo</a>
+                    href="https://github.com/smakela13/project-buddy-finder">GitHub Project Repo</a>
             </div>
         </div>
     </footer>
     <!-- Scripts -->
-
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
     <!-- <script src="./assets/js/map.js"></script> -->
     <script src="./assets/js/script.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,6 @@
-var ziptxt = ""
-var searchzip = document.querySelector("#zipcode");
-var searchbtn = document.querySelector("#search-button");
+var zipText = "";
+var searchZip = document.querySelector("#zipcode");
+var searchBtn = document.querySelector("#search-button");
 
 var result;
 //  APIkey = pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg;
@@ -8,17 +8,17 @@ var result;
 
 function displayMap(event) {
     event.preventDefault();
-    if (searchzip.value !== "") {
-        ziptxt = searchzip.val().trim();
-        getzipcode(ziptxt);
+    if (searchZip.value !== "") {
+        zipText = searchZip.val().trim();
+        getZipCode(zipText);
     }
 }
 
-function getzipcode(event) {
+function getZipCode(event) {
     event.preventDefault();
-    var ziptxt = searchzip.value;
-    console.log(ziptxt)
-    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + ziptxt + ".json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg"
+    var zipText = searchZip.value;
+    console.log(zipText);
+    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + zipText + ".json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg";
 
     console.log(mapUrl);
 
@@ -27,7 +27,7 @@ function getzipcode(event) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+            console.log(data);
             result = data;
             //get info from this data and plug into map
             console.log('sending this to leaflet: ', [data.features[0].center[1], data.features[0].center[0]]);
@@ -57,7 +57,7 @@ function getzipcode(event) {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
-                radius: 500
+                radius: 100
             }).addTo(map);
 
             // var popup = L.popup();
@@ -82,18 +82,16 @@ searchbtn.addEventListener("click", getzipcode);
 
 
 // show the map with no info
-var map = L.map('mapid').setView([0, 0], 13);
+var map = L.map('mapid').setView([35.7796, -78.6382], 13);
 // add tile layer to map
-L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-    {
-        // attribution: data.attribution,
-        maxZoom: 18,
-
-        mapId: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg'
-    }).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    // attribution: data.attribution,
+    maxZoom: 18,
+    mapId: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg',
+}).addTo(map);
 
 var popup = L.popup();
 

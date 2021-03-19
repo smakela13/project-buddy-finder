@@ -4,58 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Link for Leaflet API -->
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-     crossorigin=""/>
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Buddy Finder Search Results</title>
 </head>
 <body>
-
+    <!-- Title on Navbar -->
     <nav>
-        <div class="nav-wrapper red lighten-2">
+        <div class="nav-wrapper deep-orange lighten-2">
             <div class="font-new brand-logo center">Buddy Finder</div>
-        
         </div>
-
     </nav>
-<main>
-    <div class="row">
-        <div class="left ">
-            <h2 class="">Pick Your Desired Shelter:</h2>
-            <!-- search lists -->
-            <div id="result-content" class="container"></div>
+    <main>
+        <!-- Search lists -->
+        <div class="row">
+            <div class="col s12 offset-l4 l4 center">
+                <h5>Pick Your Desired Shelter:</h5>
+                <ul id="result-content" class="collection"></ul>
+            </div>
         </div>
-        <div class="container" id="mapid">
+        <!-- Find Your Buddy Image -->
+        <div class="row">
+            <div class="section">
+                <div class="col s12 center">
+                    <img src="./assets/images/Find_Your_Buddy.jpg" alt="Find Your Buddy">
+                </div>
+            </div>
         </div>
-    </div>
-    
-</main>
-
-
-    <footer class="page-footer red lighten-2">
-        <div class="">
+        <!-- Map -->
+        <div class="row">
+            <div class="section">
+                <div class="col s12 center">
+                    <div class="container" id="mapid"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer deep-orange lighten-2">
+        <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Created with 🐾 by ...</h5>
+                    <h5 class="white-text">Created with 🐾 by Project SARD <br /></h5>
+                    <p class="white-text text-lighten-4">Buddy Finder is a website designed to find loving homes for
+                    abandoned pets. Project SARD aims to rescue all animals in need across the nation.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/smakela13/">Sarah M.</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/AranATA/">Ali A.</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/Vinyl77/">Richard Y.</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/hov92/">Dwayne H.</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
                 © 2021
-                <a class="grey-text text-lighten-4 right"
-                    href="https://github.com/smakela13/project-buddy-finder">GitHub
-                    Repo</a>
+                <a class="grey-text text-lighten-4 right" href="https://github.com/smakela13/project-buddy-finder">GitHub Project Repo</a>
             </div>
         </div>
     </footer>
-
+    <!-- Scripts -->
     <!-- <script src="./assets/js/script.js"></script> -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
