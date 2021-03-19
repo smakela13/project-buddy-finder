@@ -20,11 +20,13 @@ function getStoredOrgs() {
         var storedOrg = JSON.parse(window.localStorage.getItem(key));
         console.log(storedOrg);
 
+        var prevViewedHeader = document.querySelector("#previously-viewed-header");
         var orgPrevViewed = document.querySelector("#previously-viewed");
         var storedBtn = document.createElement("button");
 
-        storedBtn.classList.add("inset-y-0", "right-0", "flex", "items-center", "px-4", "text-white", "bg-blue-300");
+        storedBtn.classList.add("btn waves-effect waves-light deep-orange lighten-2 center-align text-white");
 
+        prevViewedHeader.textContent = "Previously Viewed Shelters";
         storedBtn.textContent = storedOrg.name + " - " + storedOrg.city;
         orgPrevViewed.appendChild(storedBtn);
 
@@ -73,7 +75,7 @@ function formSubmitHandler(event) {
         alert("Please enter a zipcode");
     }
     
-};
+}
 
 // SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

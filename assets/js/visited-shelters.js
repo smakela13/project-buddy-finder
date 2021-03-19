@@ -1,12 +1,11 @@
-
 // GETTING THE ZIPCODE FROM THE URL
 
 function getParZipcode() {
-     var parZipcode = document.location.search.split('=').pop();
+    var parZipcode = document.location.search.split('=').pop();
     console.log(parZipcode);
-    
+
     printMap(parZipcode);
-  }
+}
 
 // SHOWING THE MAP FOR THE PICKED SHELTER
 
@@ -62,8 +61,3 @@ function onMapClick(e) {
         .openOn(map);
 }
 map.on('click', onMapClick);
-
-getParZipcode();
-
-
-
