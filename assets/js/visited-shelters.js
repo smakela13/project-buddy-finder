@@ -4,6 +4,7 @@ function getParZipcode() {
     var parZipcode = document.location.search.split('=').pop();
     console.log(parZipcode);
 
+
     printMap(parZipcode);
 }
 

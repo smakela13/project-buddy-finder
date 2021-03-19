@@ -27,10 +27,19 @@ function getStoredOrgs() {
         storedBtn.classList.add("btn waves-effect waves-light deep-orange lighten-2 center-align text-white");
 
         prevViewedHeader.textContent = "Previously Viewed Shelters";
-        storedBtn.textContent = storedOrg.name + " - " + storedOrg.city;
+        storedBtn.textContent = storedOrg.name + " - " + storedOrg.city + ", " + storedOrg.state;
         orgPrevViewed.appendChild(storedBtn);
 
         storedBtn.setAttribute("postcode", storedOrg.postcode);
+
+        // PRINTING THE WEBSITE INFO FOR THE STORED SHELTER
+        var orgWebsiteEl = document.querySelector("#orgWebsite");
+        orgWebsiteEl.innerHTML = "";
+        var orgWebsiteLinkEl = document.createElement("a");
+        orgWebsiteLinkEl.textContent = "Click to " + storedOrg.name + " Website"
+        orgWebsiteLinkEl.setAttribute("href", storedOrg.website);
+        orgWebsiteLinkEl.setAttribute("target","_blank");
+        orgWebsiteEl.appendChild(orgWebsiteLinkEl);
 
         storedBtn.addEventListener("click", function (event) {
             var postcode = event.target.getAttribute("postcode");
