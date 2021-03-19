@@ -31,14 +31,17 @@ function getStoredOrgs() {
         storedBtn.setAttribute("postcode", storedOrg.postcode);
 
         storedBtn.addEventListener("click", function (event) {
-
+            var postcode = event.target.getAttribute("postcode");
             // cardContainerEl.innerHTML = "";
             // activeCityNameEl.textContent = "";
             // activeCityIconEl.textContent = "";
             // activeCityNameEl.textContent = this.textContent;
 
-            var postcode = event.target.getAttribute("postcode");
-
+           // THIS CODE WILL TAKE US TO THE VISITED SHELTERS PAGE
+        //    WE NEED TO CREATE ANOTHER HTML DUE TO TOKEN GENERATOR
+            var queryString = "./visited-shelters.html?q=" + postcode;
+            location.assign(queryString);
+            
             // searchMap(postcode); Will call get-map-API code.
         });
     }
