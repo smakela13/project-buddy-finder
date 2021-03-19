@@ -92,9 +92,9 @@ function printPetfinderResults(resultOrg) {
     // new button container div element variable
     // #result-log will be changed
     var orgList = document.querySelector("#result-content");
-    var resultBtn = document.createElement("button");
+    var resultBtn = document.createElement("ul");
 
-    resultBtn.classList.add("inset-y-0", "right-0", "flex", "items-center", "px-4", "text-white", "bg-blue-300");
+    resultBtn.classList.add("collection-item");
     // resultBtn.value = resultOrg.name;
     resultBtn.textContent = resultOrg.name + " - " + resultOrg.address.city;
     orgList.appendChild(resultBtn);
@@ -127,7 +127,7 @@ function printPetfinderResults(resultOrg) {
 function printMap(postcode) {
     console.log(postcode);
 
-    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + postcode + ".json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg"
+    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + postcode + ".json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg";
 
     console.log(mapUrl);
 
@@ -136,26 +136,26 @@ function printMap(postcode) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+            console.log(data);
             result = data;
             //get info from this data and plug into map
             console.log('sending this to leaflet: ', [data.features[0].center[1], data.features[0].center[0]]);
             // add a marker on the center
             var marker = L.marker([data.features[0].center[1], data.features[0].center[0]]).addTo(map);
 
-            marker.bindPopup("<b>Hey Buddy Finder!</b><br>I am a popup.").openPopup();
+            marker.bindPopup("<b>Hey Buddy Finder!</b><br>Your Shelter Location").openPopup();
             // add a circle
             var circle = L.circle([data.features[0].center[1], data.features[0].center[0]], {
                 color: 'red',
                 fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 500
+                fillOpacity: 0.1,
+                radius: 200
             }).addTo(map);
-        })
+        });
 }
 
 // show the map with no info
-var map = L.map("mapid").setView([0, 0], 13);
+var map = L.map("mapid").setView([35.99, -78.89], 10);
 // add tile layer to map
 L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     {
