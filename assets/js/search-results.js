@@ -92,7 +92,7 @@ function printPetfinderResults(resultOrg) {
     // new button container div element variable
     // #result-log will be changed
     var orgList = document.querySelector("#result-content");
-    var resultBtn = document.createElement("ul");
+    var resultBtn = document.createElement("a");
 
     resultBtn.classList.add("collection-item");
     // resultBtn.value = resultOrg.name;
@@ -115,12 +115,18 @@ function printPetfinderResults(resultOrg) {
         
         // PRINTING THE WEBSITE INFO FOR THE PICKED SHELTER
         var orgWebsiteEl = document.querySelector("#orgWebsite");
+        var orgNameEl = document.querySelector("#orgName");
+        var orgCityEl = document.querySelector("#orgCityState");
+        var orgEmailEl = document.querySelector("#orgEmail");
+        
         orgWebsiteEl.innerHTML = "";
-        var orgWebsiteLinkEl = document.createElement("a");
-        orgWebsiteLinkEl.textContent = "Click to " + resultOrg.name + " Website"
-        orgWebsiteLinkEl.setAttribute("href", resultOrg.website);
-        orgWebsiteLinkEl.setAttribute("target","_blank");
-        orgWebsiteEl.appendChild(orgWebsiteLinkEl);
+        orgNameEl.innerHTML = "";
+        orgCityEl.innerHTML = "";
+        orgEmailEl.innerHTML = "";
+        orgWebsiteEl.innerHTML = "<a href='" + resultOrg.website + "'>" + "Visit " + resultOrg.name + " Online" + "</a>";
+        orgNameEl.textContent = "Name: " + resultOrg.name;
+        orgCityEl.textContent = "Location: " + resultOrg.address.city + ", " + resultOrg.address.state;
+        orgEmailEl.innerHTML = "<a href='" + "mailto:" + resultOrg.email + "'>" + resultOrg.email;
 
         // STORING THE PICKED SHELTER
         window.localStorage.setItem(resultOrg.name, JSON.stringify({
