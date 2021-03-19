@@ -96,7 +96,7 @@ function printPetfinderResults(resultOrg) {
 
     resultBtn.classList.add("collection-item");
     // resultBtn.value = resultOrg.name;
-    resultBtn.textContent = resultOrg.name + " - " + resultOrg.address.city;
+    resultBtn.textContent = resultOrg.name + " - " + resultOrg.address.city + ", " + resultOrg.address.state;
     orgList.appendChild(resultBtn);
 
     // this attribute "postcode" is to be used for Map API
@@ -104,23 +104,38 @@ function printPetfinderResults(resultOrg) {
 
     resultBtn.addEventListener("click", function (event) {
 
-        // cardContainerEl.innerHTML = "";
+        
         // activeCityNameEl.textContent = "";
         // activeCityIconEl.textContent = "";
         // activeCityNameEl.textContent = resultObj.name + " - " + resultObj.state;
 
         var postcode = event.target.getAttribute("postcode");
         // Will call map-code.
-        printMap(postcode); 
+        printMap(postcode);
         
+        // PRINTING THE WEBSITE INFO FOR THE PICKED SHELTER
+        var orgWebsiteEl = document.querySelector("#orgWebsite");
+        orgWebsiteEl.innerHTML = "";
+        var orgWebsiteLinkEl = document.createElement("a");
+        orgWebsiteLinkEl.textContent = "Click to " + resultOrg.name + " Website"
+        orgWebsiteLinkEl.setAttribute("href", resultOrg.website);
+        orgWebsiteLinkEl.setAttribute("target","_blank");
+        orgWebsiteEl.appendChild(orgWebsiteLinkEl);
+
+        // STORING THE PICKED SHELTER
         window.localStorage.setItem(resultOrg.name, JSON.stringify({
             name: resultOrg.name,
             city: resultOrg.address.city,
+            state: resultOrg.address.state,
             postcode: resultOrg.address.postcode,
+            website: resultOrg.website,
         }));
     });
 
 }
+
+
+
 
 // SHOWING THE MAP FOR THE PICKED SHELTER
 
