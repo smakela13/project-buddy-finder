@@ -61,5 +61,3 @@ function onMapClick(e) {
         .openOn(map);
 }
 map.on('click', onMapClick);
-
-getParZipcode();
