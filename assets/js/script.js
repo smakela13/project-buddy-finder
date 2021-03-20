@@ -80,7 +80,6 @@ function formSubmitHandler(event) {
         // THIS CODE WILL TAKE US TO THE RESULTS PAGE
         var queryString = "./search-results.html?q=" + zipcodeEntered;
         location.assign(queryString);
-
         inputEl.value = "";
        
     } else {
@@ -89,6 +88,7 @@ function formSubmitHandler(event) {
         M.Modal.init(modalalert);
         var instance = M.Modal.getInstance(modalalert);   
         instance.open();
+        inputEl.value = "";
     }
 }
 
