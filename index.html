@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/images/favicon.ico" rel="shortcut icon">
     <!-- CSS Links -->
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mako&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Home | Buddy Finder</title>
@@ -39,7 +41,7 @@
             <div class="col s12 center">
                 <div class="row">
                     <form id="buddy-form" class="col s12">
-                        <h5>Find Shelters:</h5>
+                        <h5 id="shelter">Find Shelters:</h5>
                         <div class="row">
                             <div class="input-field col offset-s9 s9 offset-l4 l4">
                                 <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
@@ -57,6 +59,56 @@
         <!-- Recently viewed shelters -->
         <h5 id="previously-viewed-header" class="center"></h5>
         <div id="previously-viewed" class="col s12 m7 l9 center"></div>
+        <div class="container" id="orgWebsite"></div>
+        <!-- Informational Cards -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./assets/images/guinea-pigs-card-img.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./assets/images/bird-card-img.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./assets/images/blackcat-card-img.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
             <!-- Pete's Pet Shop Image -->
             <div class="row">
                 <div class="section">
@@ -65,8 +117,8 @@
                     </div>
                 </div>
             </div>
-        <!-- Map -->
-        <div id="mapid"></div>
+        <!-- Map 
+        <div id="mapid"></div>-->
     </main>
     <!-- Footer -->
     <footer class="page-footer deep-orange lighten-2">
