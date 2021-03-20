@@ -1,6 +1,6 @@
 /* Custom page styles for sticky footer and background color */
 body {
-    background-color: antiquewhite;
+    background-color: #c9e6cf;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -15,6 +15,53 @@ nav {
     height: 115px;
     line-height: 80px;
 }
+#shelter{
+  /*h5 for find shelter  */
+font-family: 'Questrial', sans-serif;
+}
+input, #zipcode{
+  /* font change and background color for search form */
+font-family: 'Questrial', sans-serif;
+color:black;
+background-color: blanchedalmond;
+
+}
+#previously-viewed-header{
+  /* font change to the previously viewed header */
+
+font-family: 'Questrial', sans-serif;
+}
+.btn {
+  /* font changes to the appended previously searched buttons */
+  font-family: 'Questrial', sans-serif;
+
+}
+.white-text{
+  /* project members github links */
+  font-family: 'Questrial', sans-serif;
+}
+.grey-text{
+  /* repo link */
+  font-family: 'Questrial', sans-serif;
+}
+#desiredShelter{
+  /* h5 for desired shelter */
+  
+  font-family: 'Questrial', sans-serif;
+}
+.collection-item{
+  /* links on the appended list in search results page */
+  font-family: 'Questrial', sans-serif;
+}
+#orgName, #orgCityState, #orgEmail, #orgWebsite{
+  /* font change to text in search card. */
+
+  font-family: 'Questrial', sans-serif;
+}
+
+
+
+
  
 /* Font style changes */
 .font-new {
@@ -35,11 +82,14 @@ a {
     color: white;
     text-decoration: underline;
     cursor: pointer;
+
 }
 
 button {
     cursor: pointer;
 }
+
+
 
 /* Map style */
 #mapid { 
