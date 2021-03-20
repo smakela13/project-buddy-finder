@@ -10,7 +10,6 @@ var inputEl = document.querySelector("#zipcode");
 // card container div element variable
 var cardContainerEl = document.querySelector("#previously-viewed");
 
-
 // GETTING DATA FROM LOCAL STORAGE
 
 function getStoredOrgs() {
@@ -23,47 +22,38 @@ function getStoredOrgs() {
         var prevViewedHeader = document.querySelector("#previously-viewed-header");
         var orgPrevViewed = document.querySelector("#previously-viewed");
         var storedBtn = document.createElement("div");
-
-        storedBtn.classList.add("card-panel", "card-index", "waves-effect", "waves-light", "deep-orange", "lighten-2", "center-align", "text-white");
-
+        
         prevViewedHeader.textContent = "Previously Viewed Shelters";
-        storedBtn.innerHTML = storedOrg.name + "<br />" + storedOrg.city + ", " + storedOrg.state;
-        orgPrevViewed.appendChild(storedBtn);
-
-        storedBtn.setAttribute("postcode", storedOrg.postcode);
-
-        // PRINTING THE WEBSITE INFO FOR THE STORED SHELTER
-        var orgWebsiteEl = document.querySelector("#orgWebsite");
+       
+        storedBtn.classList.add("card-panel", "card-index", "waves-effect", "waves-light", "deep-orange", "lighten-2", "center-align", "text-white");
         var prevLink = storedOrg.website;
-        // NEEDS TO BE ADJUSTED TO WORK FOR THE INDEX.HTML *WORK IN PROGRESS*
         if (storedOrg.website) {
             prevLink = storedOrg.website;
         } else {
             prevLink = storedOrg.url;
             console.log(prevLink);
         }
-
-        orgWebsiteEl.innerHTML = "";
         var orgWebsiteLinkEl = document.createElement("a");
-        orgWebsiteLinkEl.textContent = "Click to " + storedOrg.name + " Website"
+        orgWebsiteLinkEl.innerHTML = storedOrg.name + "<br />" + storedOrg.city + ", " + storedOrg.state;
         orgWebsiteLinkEl.setAttribute("href", prevLink);
         orgWebsiteLinkEl.setAttribute("target","_blank");
-        orgWebsiteEl.appendChild(orgWebsiteLinkEl);
 
-        storedBtn.addEventListener("click", function (event) {
-            var postcode = event.target.getAttribute("postcode");
-            // cardContainerEl.innerHTML = "";
-            // activeCityNameEl.textContent = "";
-            // activeCityIconEl.textContent = "";
-            // activeCityNameEl.textContent = this.textContent;
+        storedBtn.appendChild(orgWebsiteLinkEl);
 
-           // THIS CODE WILL TAKE US TO THE VISITED SHELTERS PAGE
-        //    WE NEED TO CREATE ANOTHER HTML DUE TO TOKEN GENERATOR
-            var queryString = "./visited-shelters.html?q=" + postcode;
-            location.assign(queryString);
-            
-            // searchMap(postcode); Will call get-map-API code.
+
+        storedBtn.setAttribute("postcode", storedOrg.postcode);
+        orgPrevViewed.appendChild(storedBtn);
+
+        // RESETING THE LOCAL STORAGE
+        var resetBtn = document.querySelector("#reset");
+        resetBtn.addEventListener("click", function(event){
+        event.preventDefault();  
+        window.localStorage.clear();
+        document.location.reload();
         });
+        
+        // var orgWebsiteEl = document.querySelector("#orgWebsite");
+        // orgWebsiteEl.innerHTML = "";
     }
 }
 
@@ -76,23 +66,30 @@ function formSubmitHandler(event) {
     
     var zipcodeEntered = inputEl.value.trim();
     console.log(zipcodeEntered);
+    
+        // ZIPCODE TEST
 
-    if (zipcodeEntered) {
-        // function call #3: Calls to search petfinder with the input **********
-        // searchPetfinder(zipcodeEntered);
-            
+    function validateZipCode(elementValue){
+        var zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
+         return zipCodePattern.test(elementValue);
+    }
+    var validZipTest = validateZipCode(zipcodeEntered);
+
+    if (validZipTest) {
+                
         // THIS CODE WILL TAKE US TO THE RESULTS PAGE
         var queryString = "./search-results.html?q=" + zipcodeEntered;
         location.assign(queryString);
 
         inputEl.value = "";
-        //  To be checked:  ex: activeCityNameEl.textContent = ""; - ANY FIELD TO BE EMPTIED HERE!
-        //  To be done: USE MODALS INSTEAD OF ALERTS
-
+       
     } else {
-        alert("Please enter a ZIP code");
+        // MODAL;
+        var modalalert = document.getElementById("modal1");
+        M.Modal.init(modalalert);
+        var instance = M.Modal.getInstance(modalalert);   
+        instance.open();
     }
-    
 }
 
 // SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

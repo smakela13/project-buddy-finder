@@ -46,11 +46,13 @@
                             <div class="input-field col offset-s9 s9 offset-l4 l4">
                                 <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
                             </div>
+                            
                             <div class="input-field col s3 l1">
-                                <button class="btn waves-effect waves-light deep-orange lighten-2" id="search-button"><i
+                                <button class="btn waves-effect waves-light deep-orange lighten-2 modal-trigger" id="search-button" data-target="modal1"><i
                                         class="material-icons">search</i>
                                 </button>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -148,11 +150,25 @@
             </div>
         </div>
     </footer>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Invalid Input!</h4>
+          <p>Please enter a zipcode</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">I try again</a>
+        </div>
+      </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
     <!-- <script src="./assets/js/map.js"></script> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
