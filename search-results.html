@@ -25,41 +25,37 @@
         </div>
     </nav>
     <main>
+        <div class="container">
         <!-- Find Your Buddy Image -->
         <div class="row">
             <div class="section">
                 <div class="col s12 center">
-                    <img src="./assets/images/Find_Your_Buddy.jpg" alt="Find Your Buddy">
+                    <img id="banner" src="./assets/images/Find_Your_Buddy.jpg" alt="Find Your Buddy">
                 </div>
             </div>
         </div>
         <!-- Search lists -->
         <div class="row">
-            <div class="col s12 offset-l4 l4 center">
-                <h5 id="desiredShelter">Pick Your Desired Shelter:</h5>
-                <ul id="result-content" class="collection"></ul>
+            <div class="col s12 m5 l3">
+                <h5>Pick Your Desired Shelter:</h5>
             </div>
         </div>
-        <!-- Organization Card -->
         <div class="row">
-            <div class="section">
-                <div class="col offset-s4 s4">
-                    <div id="card-container" class="card-panel deep-orange lighten-4">
+            <div class="col s12 m5 l3">
+                <ul id="result-content" class="collection"></ul>
+                <!-- Organization Card -->
+                <div id="card-container" class="card-panel deep-orange lighten-4">
                     <div class="container" id="orgName">Name: </div>
                     <div class="container" id="orgCityState">Location: </div>
                     <div class="container" id="orgEmail">Email: </div>
                     <div class="container" id="orgWebsite">Website: </div>
-                    </div>
                 </div>
             </div>
+            <!-- Map -->
+                <div class="col s12 m7 l9">
+                    <div id="mapid"></div>
+                </div>
         </div>
-        <!-- Map -->
-        <div class="row">
-            <div class="section">
-                <div class="col s12 center">
-                    <div class="container" id="mapid"></div>
-                </div>
-            </div>
         </div>
     </main>
     <!-- Footer -->

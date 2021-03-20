@@ -1,9 +1,11 @@
 /* Custom page styles for sticky footer and background color */
 body {
+    background: linear-gradient(290deg, rgba(250,235,215,1) 0%, rgba(201,230,207,1) 39%);
     background-color: #c9e6cf;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Questrial', sans-serif;
 }
 
 main {
@@ -12,57 +14,26 @@ main {
 
 /* Custom style for nav bar */
 nav {
-    height: 115px;
-    line-height: 80px;
-}
-#shelter{
-  /*h5 for find shelter  */
-font-family: 'Questrial', sans-serif;
-}
-input, #zipcode{
-  /* font change and background color for search form */
-font-family: 'Questrial', sans-serif;
-color:black;
-background-color: blanchedalmond;
-
-}
-#previously-viewed-header{
-  /* font change to the previously viewed header */
-
-font-family: 'Questrial', sans-serif;
-}
-.btn {
-  /* font changes to the appended previously searched buttons */
-  font-family: 'Questrial', sans-serif;
-
-}
-.white-text{
-  /* project members github links */
-  font-family: 'Questrial', sans-serif;
-}
-.grey-text{
-  /* repo link */
-  font-family: 'Questrial', sans-serif;
-}
-#desiredShelter{
-  /* h5 for desired shelter */
-  
-  font-family: 'Questrial', sans-serif;
-}
-.collection-item{
-  /* links on the appended list in search results page */
-  font-family: 'Questrial', sans-serif;
-}
-#orgName, #orgCityState, #orgEmail, #orgWebsite{
-  /* font change to text in search card. */
-
-  font-family: 'Questrial', sans-serif;
+    height: 150px;
+    line-height: 120px;
 }
 
-
-
-
+/* background color for search form */
+input, #zipcode {
+    background-color: antiquewhite;
+}
  
+/* Card Panel changes */
+.card-index {
+  margin: 0 5px;
+  border-radius: 3px;
+}
+
+/* Image changes */
+.banner img {
+  box-shadow: 2px 2px black;
+}
+
 /* Font style changes */
 .font-new {
   font-family: 'Redressed', sans-serif;
@@ -70,11 +41,15 @@ font-family: 'Questrial', sans-serif;
 
 nav .brand-logo {
   padding: 10px;
-  font-size: 3.75rem;
+  font-size: 5.5rem;
 }
 
 nav div a {
     text-decoration: none;
+}
+
+div p {
+    font-size: 17px;
 }
 
 /* Button and link styles */
@@ -82,14 +57,11 @@ a {
     color: white;
     text-decoration: underline;
     cursor: pointer;
-
 }
 
 button {
     cursor: pointer;
 }
-
-
 
 /* Map style */
 #mapid { 

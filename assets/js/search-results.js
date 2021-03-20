@@ -118,12 +118,19 @@ function printPetfinderResults(resultOrg) {
         var orgNameEl = document.querySelector("#orgName");
         var orgCityEl = document.querySelector("#orgCityState");
         var orgEmailEl = document.querySelector("#orgEmail");
+        var refLink = resultOrg.website;
+
+        if (resultOrg.website) {
+            refLink = resultOrg.website;
+        } else {
+            refLink = resultOrg.url;
+        }
         
         orgWebsiteEl.innerHTML = "";
         orgNameEl.innerHTML = "";
         orgCityEl.innerHTML = "";
         orgEmailEl.innerHTML = "";
-        orgWebsiteEl.innerHTML = "<a href='" + resultOrg.website + "'>" + "Visit " + resultOrg.name + " Online" + "</a>";
+        orgWebsiteEl.innerHTML = "<a href='" + refLink + "'>" + "Visit " + resultOrg.name + " Online" + "</a target='" + "blank" + "'>";
         orgNameEl.textContent = "Name: " + resultOrg.name;
         orgCityEl.textContent = "Location: " + resultOrg.address.city + ", " + resultOrg.address.state;
         orgEmailEl.innerHTML = "<a href='" + "mailto:" + resultOrg.email + "'>" + resultOrg.email;
@@ -134,7 +141,7 @@ function printPetfinderResults(resultOrg) {
             city: resultOrg.address.city,
             state: resultOrg.address.state,
             postcode: resultOrg.address.postcode,
-            website: resultOrg.website,
+            website: refLink,
         }));
     });
 
@@ -148,7 +155,7 @@ function printPetfinderResults(resultOrg) {
 function printMap(postcode) {
     console.log(postcode);
 
-    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + postcode + ".json?access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg";
+    var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + postcode + ".json?country=us&access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg";
 
     console.log(mapUrl);
 
@@ -176,7 +183,7 @@ function printMap(postcode) {
 }
 
 // show the map with no info
-var map = L.map("mapid").setView([35.99, -78.89], 10);
+var map = L.map("mapid").setView([35.87, -78.79], 10);
 // add tile layer to map
 L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     {

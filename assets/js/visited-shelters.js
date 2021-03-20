@@ -41,7 +41,7 @@ function printMap(postcode) {
 }
 
 // show the map with no info
-var map = L.map("mapid").setView([35.99, -78.89], 10);
+var map = L.map("mapid").setView([35.87, -78.79], 10);
 // add tile layer to map
 L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     {
