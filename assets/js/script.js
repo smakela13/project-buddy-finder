@@ -1,13 +1,6 @@
-// _________PETFINDER SCRIPT STARTS HERE___________
-
-
-// form element variable
 var buddyFormEl = document.querySelector("#buddy-form");
-// SUBMIT EVENT
 buddyFormEl.addEventListener('submit', formSubmitHandler);
-// input element variable
 var inputEl = document.querySelector("#zipcode");
-// card container div element variable
 var cardContainerEl = document.querySelector("#previously-viewed");
 
 // GETTING DATA FROM LOCAL STORAGE
@@ -46,17 +39,14 @@ function getStoredOrgs() {
 
         // RESETING THE LOCAL STORAGE
         var resetBtn = document.querySelector("#reset");
+        resetBtn.classList.add("visible");
         resetBtn.addEventListener("click", function(event){
         event.preventDefault();  
         window.localStorage.clear();
         document.location.reload();
         });
-        
-        // var orgWebsiteEl = document.querySelector("#orgWebsite");
-        // orgWebsiteEl.innerHTML = "";
     }
 }
-
 getStoredOrgs();
 
 // SUBMIT ZIPCODE
@@ -68,7 +58,7 @@ function formSubmitHandler(event) {
     var zipcodeEntered = document.querySelector("#zipcode").value.trim();
     console.log(zipcodeEntered);
     
-        // ZIPCODE TEST
+    // ZIPCODE TEST
 
     function validateZipCode(elementValue){
         var zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
@@ -77,7 +67,6 @@ function formSubmitHandler(event) {
     var validZipTest = validateZipCode(zipcodeEntered);
 
     if (validZipTest) {
-                
         // THIS CODE WILL TAKE US TO THE RESULTS PAGE
         var queryString = "./search-results.html?q=" + zipcodeEntered;
         location.assign(queryString);
@@ -90,15 +79,10 @@ function formSubmitHandler(event) {
         var instance = M.Modal.getInstance(modalalert);   
         instance.open();
         document.querySelector("#zipcode").value = "";
-        
     }
-  
-    // location.reload();
-    // inputEl.value = "";
 }
 
 var closeModal = document.getElementById("x");
-console.log(closeModal); 
 closeModal.addEventListener("click", function(){
     // var instance = M.Modal.getInstance(closeModal);
     // instance.close();
@@ -106,6 +90,3 @@ closeModal.addEventListener("click", function(){
 });
 
 // SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-buddyFormEl.addEventListener('submit', formSubmitHandler);
-

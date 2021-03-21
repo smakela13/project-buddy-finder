@@ -1,10 +1,7 @@
-// _________SECOND PAGE PETFINDER SCRIPT STARTS HERE___________
-
 let apiKey = "mPLuBul6G12XM99wSZsV1LJj4B1RnvgKYo7qZThtAvoM6uNqun"; // put your key here
 let secret = "uMuiXKqNHfLNcLsmyuEhA0P26uZrjhS5yzZpIH9Y"; // put your secret here
 let token;
 let testURL = "https://api.petfinder.com/v2/animals";
-
 
 // GETTING TOKEN FROM PETFINDER
 // This is the function to get the token from petfinder. It must start FIRST.
@@ -30,15 +27,11 @@ function getToken() {
 // GETTING THE ZIPCODE FROM THE URL
 
 function getParZipcode() {
-    // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var parZipcode = document.location.search.split('=').pop();
-    console.log(parZipcode);
-    
     searchPetfinder(parZipcode);
   }
 
 // SEARCHING PETFINDER WITH ZIPCODE AND TOKEN
-// uses fetchToPetFinder... when making fetch calls to pet finder api, you have to use function fetchToPetFinder!
 
 function searchPetfinder(zipcode) {
     
@@ -48,9 +41,8 @@ function searchPetfinder(zipcode) {
         if (zipcode) {
             petfinderOrganizationUrl = "https://api.petfinder.com/v2/organizations/?location=" + zipcode + "&distance=10&limit=5";
         }
-        console.log(petfinderOrganizationUrl);
 
-        // function call #4: Calls to initiate fetchToPetFinder function to fetch data with token**********
+        // function calls to initiate fetchToPetFinder function to fetch data with token
         fetchToPetFinder(petfinderOrganizationUrl, function (petfinderResult) {
             console.log(petfinderResult);
 
@@ -58,7 +50,7 @@ function searchPetfinder(zipcode) {
                 alert("No results found!");
             } else {
                 for (var i = 0; i < petfinderResult.organizations.length; i++) {
-                    // function call #5: Calls to print the results **********
+                    // function calls to print the results
                     printPetfinderResults(petfinderResult.organizations[i]);
                 }
             }
@@ -84,18 +76,14 @@ function fetchToPetFinder(url, callback) {
         });
 }
 
-
 // PRINTING THE RESULTS FROM PETFINDER
 
 function printPetfinderResults(resultOrg) {
     console.log(resultOrg);
-    // new button container div element variable
-    // #result-log will be changed
     var orgList = document.querySelector("#result-content");
     var resultBtn = document.createElement("a");
 
     resultBtn.classList.add("collection-item");
-    // resultBtn.value = resultOrg.name;
     resultBtn.textContent = resultOrg.name + " - " + resultOrg.address.city + ", " + resultOrg.address.state;
     orgList.appendChild(resultBtn);
 
@@ -103,14 +91,8 @@ function printPetfinderResults(resultOrg) {
     resultBtn.setAttribute("postcode", resultOrg.address.postcode);
 
     resultBtn.addEventListener("click", function (event) {
-
-        
-        // activeCityNameEl.textContent = "";
-        // activeCityIconEl.textContent = "";
-        // activeCityNameEl.textContent = resultObj.name + " - " + resultObj.state;
-
         var postcode = event.target.getAttribute("postcode");
-        // Will call map-code.
+        // Will call map-coding.
         printMap(postcode);
         
         // PRINTING THE WEBSITE INFO FOR THE PICKED SHELTER
@@ -130,12 +112,12 @@ function printPetfinderResults(resultOrg) {
         orgNameEl.innerHTML = "";
         orgCityEl.innerHTML = "";
         orgEmailEl.innerHTML = "";
-        orgWebsiteEl.innerHTML = "<a href='" + refLink + "'>" + "Visit " + resultOrg.name + " Online" + "</a target='" + "blank" + "'>";
+        orgWebsiteEl.innerHTML = "Website: " + "<a href='" + refLink + "'>" + "Visit " + resultOrg.name + " Online" + "</a target='" + "blank" + "'>";
         orgNameEl.textContent = "Name: " + resultOrg.name;
         orgCityEl.textContent = "Location: " + resultOrg.address.city + ", " + resultOrg.address.state;
-        orgEmailEl.innerHTML = "<a href='" + "mailto:" + resultOrg.email + "'>" + resultOrg.email;
+        orgEmailEl.innerHTML = "Email: " + "<a href='" + "mailto:" + resultOrg.email + "'>" + resultOrg.email;
 
-        // STORING THE PICKED SHELTER
+        // STORING THE PICKED SHELTER IN LOCAL STORAGE
         window.localStorage.setItem(resultOrg.name, JSON.stringify({
             name: resultOrg.name,
             city: resultOrg.address.city,
@@ -143,12 +125,10 @@ function printPetfinderResults(resultOrg) {
             postcode: resultOrg.address.postcode,
             website: refLink,
         }));
+
     });
 
 }
-
-
-
 
 // SHOWING THE MAP FOR THE PICKED SHELTER
 
@@ -171,13 +151,13 @@ function printMap(postcode) {
             // add a marker on the center
             var marker = L.marker([data.features[0].center[1], data.features[0].center[0]]).addTo(map);
 
-            marker.bindPopup("<b>Hey Buddy Finder!</b><br>Your Shelter Location").openPopup();
+            marker.bindPopup("<b>Hey Buddy Finder!</b><br> Here is your shelter's area").openPopup();
             // add a circle
             var circle = L.circle([data.features[0].center[1], data.features[0].center[0]], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.1,
-                radius: 200
+                radius: 5000,
             }).addTo(map);
         });
 }

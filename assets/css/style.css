@@ -69,6 +69,13 @@ button {
     width: 800px;
 }
 
+.hidden {
+  visibility:hidden;
+}
+
+.visible {
+  visibility:visible;
+}
 /* Media queries for responsiveness */
 @media only screen and (max-width: 861px){
   nav, nav .nav-wrapper {
