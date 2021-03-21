@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mako&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- End of CSS Links -->
     <title>Shelters | Buddy Finder</title>
 </head>
 <body>
@@ -30,20 +31,20 @@
         <div class="row">
             <div class="section">
                 <div class="col s12 center">
-                    <img id="banner" src="./assets/images/Find_Your_Buddy.jpg" alt="Find Your Buddy">
+                    <img class="responsive-img" id="banner" src="./assets/images/Find_Your_Buddy.jpg" alt="Find Your Buddy">
                 </div>
             </div>
         </div>
         <!-- Search lists -->
         <div class="row">
-            <div class="col s12 m5 l3">
+            <div class="col s12 offset-l4 l4 center">
                 <h5>Pick Your Desired Shelter:</h5>
+                <ul id="result-content" class="collection"></ul>
             </div>
         </div>
+        <!-- Organization Card -->
         <div class="row">
-            <div class="col s12 m5 l3">
-                <ul id="result-content" class="collection"></ul>
-                <!-- Organization Card -->
+            <div class="col s12 offset-l4 l4">
                 <div id="card-container" class="card-panel deep-orange lighten-4">
                     <div class="container" id="orgName">Name: </div>
                     <div class="container" id="orgCityState">Location: </div>
@@ -51,10 +52,14 @@
                     <div class="container" id="orgWebsite">Website: </div>
                 </div>
             </div>
-            <!-- Map -->
-                <div class="col s12 m7 l9">
-                    <div id="mapid"></div>
+        </div>
+        <!-- Map -->
+        <div class="row">
+            <div class="section">
+                <div class="col s12 center">
+                    <div class="container" id="mapid"></div>
                 </div>
+            </div>
         </div>
         </div>
     </main>
@@ -62,12 +67,12 @@
     <footer class="page-footer deep-orange lighten-2">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col s12 l6">
                     <h5 class="white-text">Created with 🐾 by Project SARD <br /></h5>
                     <p class="white-text text-lighten-4">Buddy Finder is a website designed to find loving homes for
                     abandoned pets. Project SARD aims to rescue all animals in need across the nation.</p>
                 </div>
-                <div class="col l4 offset-l2 s12">
+                <div class="col s12 l2 offset-l2">
                     <ul>
                         <li><a class="white-text text-lighten-3" href="https://github.com/smakela13/">Sarah M.</a></li>
                         <li><a class="white-text text-lighten-3" href="https://github.com/AranATA/">Ali A.</a></li>
@@ -84,11 +89,20 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Server Error!</h4>
+            <p>Please enter a valid ZIP code, or try again later. Showing a default map.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Try Again</a>
+        </div>
+    </div>
     <!-- Scripts -->
-    <!-- <script src="./assets/js/script.js"></script> -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>  
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/search-results.js"></script>
 </body>
 </html>

@@ -1,121 +1,59 @@
-<br>
+# Buddy Finder
 
-## **buddy-finder**<br>
-<br>
+## Table of Contents
 
-[https://smakela13.github.io/project-buddy-finder/](https://smakela13.github.io/project-buddy-finder/)<br>
-<br>
-<br>
+* [Description](#description)
+* [Usage](#usage)
+* [Wireframe](#wireframe)
+* [Credits](#credits)
+* [License](#license)
 
-## description
+## Description
 
-***
-Buddy Finder is a coding project done by the team SARD. Team members are:<br>
-* Sarah M. - [https://github.com/smakela13/](https://github.com/smakela13/)<br>
-* Richard Y - [https://github.com/Vinyl77/](https://github.com/Vinyl77/)<br>
-* Dwayne H - [https://github.com/hov92/](https://github.com/hov92/)<br>
-* Ali A - [https://github.com/AranATA/](https://github.com/AranATA/)<br>
-<br>
-This application is offering a search engine with a map to help you find your buddy. It retrieve the closest animal shelters' information and show the location of your pick on a map. It is featuring a dynamically updated HTML with Materialize CSS framework and powered by JavaScript code - utilizing two server-side APIs: petfinder and leaflet.js.<br>
-<br>
-<br>
+Buddy Finder is a website designed to find loving homes for abandoned pets. Project SARD aims to rescue all animals in need across the nation.
 
-## acceptance criteria
+Do you want to find a rescue animal to spend your life with?
 
-***
+With this website, you can find true companionship! 
 
-The codebase achieves the following criteria:<br>
+This website allows you to search for nearby animal shelters within the United States by inputting the ZIP code of your choice. The information returned includes: a map of the searched area with a list of rescue shelters. When you click on a rescue shelter, you'll be given the organization's name, their location, a website, and the shelter's email address.
 
-* <br>
-* <br>
-* <br>
-* <br>
-* <br>
-* <br>
-* <br>
+When you return back to the page, your search history will appear on the homepage. You'll be able to click on the shelter you'd like to get more information on again, and you will be directed to the shelter's website to so you can find the furry friend of your dreams.
 
-<br>
-<br>
+Love is right around the corner! Search for your forever pet today.
 
-## usage
+Buddy Finder uses JavaScript, HTML, CSS, [Materialize CSS](https://materializecss.com/), [GoogleFonts](https://fonts.google.com/), [Material Icons](https://material.io/resources/icons/), and a [Favicon Generator](https://favicon.io/favicon-generator/). It uses the [Petfinder API](https://www.petfinder.com/developers/) to retrieve information on rescue shelters, [LeafletJS](https://leafletjs.com/) and [Mapbox](https://docs.mapbox.com/) to display the map for the selected shelters.
 
-***
+## Usage
 
-A wireframe showing the design of the page <br>
-<br>
+The homepage of the website when a user first visits.
 
-![alt text](assets/images/project-buddy-finder.png)
+![Project SARD's Buddy Finder](./assets/images/project-buddy-finder-index-screenshot.png)
 
-<br>
-<br>
+The search results page when the user has entered their ZIP code and have found a shelter that they would like to visit. A card with information shows the rescue shelter's contact details and a map with the shelter's location.
 
-A short video that shows how the UI works.<br>
-<br>
+![Project SARD's Buddy Finder](./assets/images/project-buddy-finder-search-screenshot.png)
 
-![daily planner demo](assets/images/project-buddy-finder.gif)
+When the user returns to the website, they will see that the shelter they previously viewed now shows on the homepage. They can click on the button to visit the rescue shelter's website.
 
-<br>
-<br>
+![Project SARD's Buddy Finder](./assets/images/project-buddy-finder-history-screenshot.png)
 
-## some valuable references
+Navigate to [Buddy Finder](https://smakela13.github.io/project-buddy-finder) and view the web page.
 
-***
+## Wireframe
 
-These notes and links are listing some valuable references among others that we used doing this project:<br>
-<br>
+A wireframe showing the page's design. Wireframe was created using 
 
-[https://materializecss.com/](https://materializecss.com/)
+![Project Buddy Finder's Wireframe](assets/images/project-buddy-finder-wireframe.png)
 
-[https://www.petfinder.com/developers/](https://www.petfinder.com/developers/)
+## Credits
 
-[https://leafletjs.com/index.html](https://leafletjs.com/index.html)
+Buddy Finder is a coding project done by Project SARD. The team members are:
+* Sarah Mäkelä - [https://github.com/smakela13/](https://github.com/smakela13/)
+* Ali Aran - [https://github.com/AranATA/](https://github.com/AranATA/)
+* Richard Yvarra - [https://github.com/Vinyl77/](https://github.com/Vinyl77/)
+* Dwayne Hovington - [https://github.com/hov92/](https://github.com/hov92/)
 
-[https://www.mapbox.com/](https://www.mapbox.com/)
+## License
 
-[https://developer.mozilla.org/](https://developer.mozilla.org/)
-
-[https://favicon.io/favicon-generator/](https://favicon.io/favicon-generator/)
-
-[https://fonts.google.com/?preview.text_type=custom](https://fonts.google.com/?preview.text_type=custom)
-
-[https://fontawesome.com/](https://fontawesome.com/)
-
-[https://shields.io/category/dependencies/](https://shields.io/category/dependencies/)
-
-[https://www.screencastify.com/](https://www.screencastify.com/)
-
-<br>
-<br>
-
-## credits
-
-***
-
-Stephen Woosley - Bootcamp Instructor<br>
-Patrick Haberern - Bootcamp TA<br>
-Tim Nagorski - Bootcamp TA<br>
-Sean Walmer - Bootcamp TA<br>
-<br>
-<br>
-
-## license
-
-***
-
-This is a group project done under a bootcamp program, it is public but please contact the publisher before you use or<br>
-change any content.<br>
-ghibli.github@gmail.com
-<br>
-<br>
-
-## badges
-
-***
-
-![GitHub all releases](https://img.shields.io/github/downloads/AranATA/accessible-horiseon/total)
-
-![GitHub language count](https://img.shields.io/github/languages/count/AranATA/accessible-horiseon)
-<br>
-<br>
-
----
+This website currently has No License, which means it is under exclusive copyright. No one can copy, distribute, or modify this website without permission.
