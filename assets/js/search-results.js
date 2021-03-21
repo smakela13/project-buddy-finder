@@ -191,6 +191,12 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
 
+// Closes the modal
+var closeModal = document.getElementById("x");
+closeModal.addEventListener("click", function () {
+    location.reload();
+});
+
 // THIS STARTS EVERYTHING!
 // function call #1: gets the token from PetFinder
 getToken();

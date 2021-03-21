@@ -51,7 +51,7 @@ getStoredOrgs();
 function formSubmitHandler(event) {
     event.preventDefault();
     
-    var zipCodeEntered = inputEl.value.trim();
+    var zipCodeEntered = document.querySelector("#zipcode").value.trim();
     
     // ZIP CODE TEST
     function validateZipCode(elementValue){
@@ -71,7 +71,18 @@ function formSubmitHandler(event) {
         M.Modal.init(modalalert);
         var instance = M.Modal.getInstance(modalalert);   
         instance.open();
+        document.querySelector("#zipcode").value = "";
+        
     }
 }
 
-// SEARCHING PETFINDER WITH A ZIP CODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE
+// Closes the modal
+var closeModal = document.getElementById("x"); 
+closeModal.addEventListener("click", function() {
+    location.reload();
+});
+
+// SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+buddyFormEl.addEventListener('submit', formSubmitHandler);
+
