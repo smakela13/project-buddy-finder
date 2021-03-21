@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Mako&family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- End of CSS Links -->
     <title>Home | Buddy Finder</title>
 </head>
-
 <body>
     <!-- Title on Navbar -->
     <nav>
@@ -32,7 +31,7 @@
         <div class="row">
             <div class="section">
             <div class="col s12 center">
-                <img src="./assets/images/Buddy_Finder_1.jpg" alt="Buddy Finder">
+                <img class="responsive-img" src="./assets/images/Buddy_Finder.jpg" alt="Buddy Finder">
             </div>
             </div>
         </div>
@@ -43,26 +42,24 @@
                     <form id="buddy-form" class="col s12">
                         <h5>Find Shelters:</h5>
                         <div class="row">
-                            <div class="input-field col offset-s9 s9 offset-l4 l4">
+                            <div class="input-field col center offset-s4 s4 offset-l4 l4">
                                 <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
                             </div>
-                            
-                            <div class="input-field col s3 l1">
-                                <button class="btn waves-effect waves-light deep-orange lighten-2 modal-trigger" id="search-button" data-target="modal1"><i
-                                        class="material-icons">search</i>
+                            <div class="input-field col center s1 l1">
+                                <button class="btn waves-effect waves-light teal    accent-4 modal-trigger" id="search-button"             data-target="modal1"><i 
+                                    class="material-icons">search</i>
                                 </button>
                             </div>
-
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- Recently viewed shelters -->
+        <!-- Recently Viewed Shelters -->
         <h5 id="previously-viewed-header" class="center"></h5>
         <div class="col center">
             <p>
-                <button id="reset" class="btn waves-effect waves-light deep-orange lighten-2 modal-trigger">Clear</button>
+                <button id="reset" class="btn waves-effect waves-light teal accent-4 modal-trigger">Clear</button>
             </p>
         </div>
         <div id="previously-viewed" class="col s12 m7 l9 center"></div>
@@ -72,13 +69,12 @@
             <div class="col s12 m4">
                 <div class="card large">
                     <div class="card-image">
-                        <img src="./assets/images/guinea-pigs-card-img.jpg">
+                        <img src="./assets/images/guinea-pigs-card-img.jpg" alt="Guinea Pigs">
                         <span class="card-title">Necessities for Your Guinea Pig</span>
                     </div>
                     <div class="card-content">
-                        <p>It's important to have all the supplies you'll need to care for your guinea pig. A cage, a house to hide in, a water bottle and food dish, and chew toys are the perfect start. 
-                        </p>
-                        <p>Did you know guinea pigs love to eat hay? It's their favorite food! Make sure to stock up on a variety to keep them satisfied. They can also enjoy snacking on fresh vegetables like kale, collard greens, zucchini, and carrots. For a special treat, you can even feed them raisins, bananas, or mango.</p>
+                        <p>A cage, a house to hide in, a water bottle and food dish, and chew toys are a perfect start to the supplies you'll need for your guinea pig.</p>
+                        <p>Did you know guinea pigs love to eat hay? It's their favorite food! Make sure to stock up on a variety to keep them satisfied. They can also snack on fresh vegetables like kale, collard greens, zucchini, and carrots.</p>
                     </div>
                     <div class="card-action">
                         <a href="https://www.petsmart.com/learning-center/small-pet-care/caring-for-your-guinea-pig/A0093.html" target="_blank">Tips on caring for your guinea pig</a>
@@ -88,7 +84,7 @@
             <div class="col s12 m4">
                 <div class="card large">
                     <div class="card-image">
-                        <img src="./assets/images/bird-card-img.jpg">
+                        <img src="./assets/images/bird-card-img.jpg" alt="Bird on Hand">
                         <span class="card-title">Looking to Buy a Bird?</span>
                     </div>
                     <div class="card-content">
@@ -104,11 +100,11 @@
             <div class="col s12 m4">
                 <div class="card large">
                     <div class="card-image">
-                        <img src="./assets/images/blackcat-card-img.jpg">
+                        <img src="./assets/images/blackcat-card-img.jpg" alt="Black cat with Bandana">
                         <span class="card-title">Why You Should Adopt A Black Cat</span>
                     </div>
                     <div class="card-content">
-                        <p>Black cats have a bad reputation that costs them their lives every day. These cats have some of the lowest adoption rates and highest euthanasia rates in shelters across America. Each October, many shelters don't allow their black cats to be adopted out of fear that they'll be abandoned Halloween props. </p>
+                        <p>Black cats have a bad reputation that costs them their lives every day. These cats have some of the lowest adoption rates and highest euthanasia rates in shelters across America. Each October, many shelters suspend adoption of their black cats out of fear that they'll become abandoned Halloween props. </p>
                         <p>Rescue one of the most beautiful cats today.</p>
                     </div>
                     <div class="card-action">
@@ -117,17 +113,14 @@
                 </div>
             </div>
         </div>
-        </div>
             <!-- Pete's Pet Shop Image -->
             <div class="row">
                 <div class="section">
                     <div class="col s12 center">
-                        <a href="#"><img src="./assets/images/Petes_Pet_Shop_1.jpg" alt="Pete's Pet Shop"></a>
+                        <a href="#"><img class="responsive-img" src="./assets/images/Petes_Pet_Shop.jpg" alt="Pete's Pet Shop"></a>
                     </div>
                 </div>
             </div>
-        <!-- Map 
-        <div id="mapid"></div>-->
     </main>
     <!-- Footer -->
     <footer class="page-footer deep-orange lighten-2">
@@ -151,29 +144,25 @@
             <div class="container">
                 © 2021
                 <a class="grey-text text-lighten-4 right"
-                    href="https://github.com/smakela13/project-buddy-finder">GitHub Project Repo</a>
+                    href="https://github.com/smakela13/project-buddy-finder">GitHub Project Repo
+                </a>
             </div>
         </div>
     </footer>
-
+    <!-- Modal -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4>Invalid Input!</h4>
-          <p>Please enter a zipcode</p>
+            <h4>Invalid Input!</h4>
+            <p>Please enter a ZIP code</p>
         </div>
         <div class="modal-footer">
-          <a id="x" href="#!" class="modal-close waves-effect waves-green btn-flat">I try again</a>
+          <a id="x" href="#!" class="modal-close waves-effect waves-green btn-flat">Try Again</a>
         </div>
-      </div>
-
+    </div>
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <!-- <script src="./assets/js/map.js"></script> -->
-    
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
