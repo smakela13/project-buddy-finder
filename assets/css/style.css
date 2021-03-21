@@ -1,7 +1,6 @@
 /* Custom page styles for sticky footer and background color */
 body {
     background: linear-gradient(290deg, rgba(250,235,215,1) 0%, rgba(201,230,207,1) 39%);
-    background-color: #c9e6cf;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -16,22 +15,6 @@ main {
 nav {
     height: 150px;
     line-height: 120px;
-}
-
-/* background color for search form */
-input, #zipcode {
-    background-color: antiquewhite;
-}
- 
-/* Card Panel changes */
-.card-index {
-  margin: 0 5px;
-  border-radius: 3px;
-}
-
-/* Image changes */
-.banner img {
-  box-shadow: 2px 2px black;
 }
 
 /* Font style changes */
@@ -50,6 +33,22 @@ nav div a {
 
 div p {
     font-size: 17px;
+}
+
+/* Background color for search form */
+input, #zipcode {
+    background-color: antiquewhite;
+}
+ 
+/* Card Panel changes */
+.card-index {
+  margin: 5px;
+  border-radius: 3px;
+}
+
+/* Modal styles */
+.modal {
+  background-color: #c9e6cf;
 }
 
 /* Button and link styles */
@@ -77,13 +76,22 @@ button {
   visibility:visible;
 }
 /* Media queries for responsiveness */
-@media only screen and (max-width: 861px){
+@media only screen and (max-width: 861px) {
   nav, nav .nav-wrapper {
   height: 80px;
-  line-height: 35px;
+  line-height: 45px;
 }
   nav .brand-logo {
   padding: 10px;
-  font-size: 2.1rem;
+  font-size: 2.6rem;
+}
+#mapid {
+    max-width: 100%;
+}
+.card-panel {
+    max-width: 100%;
+}
+.card-content {
+    max-width: 100%
 }
 }

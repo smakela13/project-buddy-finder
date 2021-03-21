@@ -1,11 +1,30 @@
+<<<<<<< HEAD
+=======
+// _______SECOND PAGE PETFINDER SCRIPT STARTS HERE_______
+// API variables
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
 let apiKey = "mPLuBul6G12XM99wSZsV1LJj4B1RnvgKYo7qZThtAvoM6uNqun"; // put your key here
 let secret = "uMuiXKqNHfLNcLsmyuEhA0P26uZrjhS5yzZpIH9Y"; // put your secret here
 let token;
-let testURL = "https://api.petfinder.com/v2/animals";
 
+<<<<<<< HEAD
+=======
+// ERROR CHECKING
+function fetchErrorCheck(response) {
+    if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+    } else {
+        var modalalert = document.getElementById("modal1");
+        M.Modal.init(modalalert);
+        var instance = M.Modal.getInstance(modalalert);
+        instance.open();
+        throw Error(response.statusText);
+    }
+}
+
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
 // GETTING TOKEN FROM PETFINDER
-// This is the function to get the token from petfinder. It must start FIRST.
-
+// This function gets the token from Petfinder. It must start FIRST.
 function getToken() {
     fetch("https://api.petfinder.com/v2/oauth2/token", {
         body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
@@ -13,17 +32,21 @@ function getToken() {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         method: "POST"
-    }).then(response => response.json())
+    }).then(fetchErrorCheck)
         .then((data) => {
-            console.log("Token response: ", data);
             if (data.access_token) {
                 token = data.access_token;
-                // function call #2: Calls to get zipcode from URL********** 
-                getParZipcode();
+                // function call #2: Calls to get zipcode from URL 
+                getParZipCode();
             }
+        }).catch((error) => {
+            // NECESSARY CONSOLE LOG
+            console.log("Something went wrong with Petfinder API call");
+            console.log(error);
         });
 }
 
+<<<<<<< HEAD
 // GETTING THE ZIPCODE FROM THE URL
 
 function getParZipcode() {
@@ -35,51 +58,80 @@ function getParZipcode() {
 
 function searchPetfinder(zipcode) {
     
+=======
+// GETTING THE ZIP CODE FROM THE URL
+function getParZipCode() {
+    // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
+    var parZipCode = document.location.search.split('=').pop();
+    searchPetfinder(parZipCode);
+  }
+
+// SEARCHING PETFINDER WITH ZIP CODE AND TOKEN
+// Uses fetchToPetfinder when making fetch calls to Petfinder api, you have to use function fetchToPetfinder!
+function searchPetfinder(zipCode) {
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
     if (token) {
         var petfinderOrganizationUrl = "https://api.petfinder.com/v2/organizations";
-        
-        if (zipcode) {
-            petfinderOrganizationUrl = "https://api.petfinder.com/v2/organizations/?location=" + zipcode + "&distance=10&limit=5";
+        if (zipCode) {
+            petfinderOrganizationUrl = "https://api.petfinder.com/v2/organizations/?location=" + zipCode + "&distance=10&limit=5";
         }
+<<<<<<< HEAD
 
         // function calls to initiate fetchToPetFinder function to fetch data with token
         fetchToPetFinder(petfinderOrganizationUrl, function (petfinderResult) {
             console.log(petfinderResult);
+=======
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
 
+        // function call #4: Calls to initiate fetchToPetFinder function to fetch data with token
+        fetchToPetfinder(petfinderOrganizationUrl, function (petfinderResult) {
             if (petfinderResult.organizations.length===0) {
-                alert("No results found!");
+                var modalalert = document.getElementById("modal1");
+                M.Modal.init(modalalert);
+                var instance = M.Modal.getInstance(modalalert);
+                instance.open();
             } else {
                 for (var i = 0; i < petfinderResult.organizations.length; i++) {
+<<<<<<< HEAD
                     // function calls to print the results
+=======
+                    // function call #5: Calls to print the results
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
                     printPetfinderResults(petfinderResult.organizations[i]);
                 }
             }
         });
     } else {
-        alert(`We don't have a token`);
+        var modalalert = document.getElementById("modal1");
+        M.Modal.init(modalalert);
+        var instance = M.Modal.getInstance(modalalert);
+        instance.open();
     }    
 }
 
-// make sure you have a token before using this, this is for pet finder api calls
-function fetchToPetFinder(url, callback) {
+// Make sure you have a token before using this. For Petfinder API calls
+function fetchToPetfinder(url, callback) {
     fetch(url, {
         headers: {
             Authorization: `Bearer ${token}`
         }
-    }).then(response => response.json())
+    }).then(fetchErrorCheck)
         .then((data) => {
-            // console.log(data);
-            // your logic here should handle any pet finder api calls
-
-            // OR
+            // Logic here should handle any Petfinder API calls
             callback(data);
+        }).catch((error) => {
+            // NECESSARY CONSOLE LOG
+            console.log("Something went wrong with Petfinder API call");
+            console.log(error);
         });
 }
 
 // PRINTING THE RESULTS FROM PETFINDER
-
 function printPetfinderResults(resultOrg) {
+<<<<<<< HEAD
     console.log(resultOrg);
+=======
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
     var orgList = document.querySelector("#result-content");
     var resultBtn = document.createElement("a");
 
@@ -87,12 +139,16 @@ function printPetfinderResults(resultOrg) {
     resultBtn.textContent = resultOrg.name + " - " + resultOrg.address.city + ", " + resultOrg.address.state;
     orgList.appendChild(resultBtn);
 
-    // this attribute "postcode" is to be used for Map API
+    // Attribute "postcode" is used for Map API
     resultBtn.setAttribute("postcode", resultOrg.address.postcode);
 
     resultBtn.addEventListener("click", function (event) {
         var postcode = event.target.getAttribute("postcode");
+<<<<<<< HEAD
         // Will call map-coding.
+=======
+        // Calls map code
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
         printMap(postcode);
         
         // PRINTING THE WEBSITE INFO FOR THE PICKED SHELTER
@@ -127,32 +183,28 @@ function printPetfinderResults(resultOrg) {
         }));
 
     });
-
 }
 
 // SHOWING THE MAP FOR THE PICKED SHELTER
-
 function printMap(postcode) {
-    console.log(postcode);
-
     var mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + postcode + ".json?country=us&access_token=pk.eyJ1IjoiZGhvdjkyIiwiYSI6ImNrbWR4YWd1YTBwZW8ycGxqMGRsamExYTEifQ.QxnzTZyRh6mwlM20J1mseg";
-
-    console.log(mapUrl);
 
     fetch(mapUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             result = data;
-            //get info from this data and plug into map
-            console.log('sending this to leaflet: ', [data.features[0].center[1], data.features[0].center[0]]);
-            // add a marker on the center
+            // Adds a marker on the center
             var marker = L.marker([data.features[0].center[1], data.features[0].center[0]]).addTo(map);
+<<<<<<< HEAD
 
             marker.bindPopup("<b>Hey Buddy Finder!</b><br> Here is your shelter's area").openPopup();
             // add a circle
+=======
+            marker.bindPopup("<b>Hey Buddy Finder!</b><br>Your Shelter Location").openPopup();
+            // Adds a circle
+>>>>>>> a5cd3efe75f2d69c3e9eaa4f367703c4933e4ad9
             var circle = L.circle([data.features[0].center[1], data.features[0].center[0]], {
                 color: 'red',
                 fillColor: '#f03',
@@ -162,12 +214,11 @@ function printMap(postcode) {
         });
 }
 
-// show the map with no info
+// Show map with no info
 var map = L.map("mapid").setView([35.87, -78.79], 10);
-// add tile layer to map
+// Adds a tile layer to map
 L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     {
-        // attribution: data.attribution,
         maxZoom: 18,
         mapId: 'mapbox/streets-v11',
         tileSize: 512,
@@ -177,6 +228,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{mapId}/tiles/{z}/{x}/{y}?access_t
 
 var popup = L.popup();
 
+// Tells user the coordinates they clicked on
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
@@ -185,14 +237,12 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
 
-// console.log('about to build the map', postcode);
-
+// Closes the modal
+var closeModal = document.getElementById("x");
+closeModal.addEventListener("click", function () {
+    location.reload();
+});
 
 // THIS STARTS EVERYTHING!
-// function call #1 : to get the token from petfinder **********
+// function call #1: gets the token from PetFinder
 getToken();
-
-// example
-// let queryURL = "https://api.petfinder.com/v2/organizations/?location=27516&distance=10&limit=5";
-
-
