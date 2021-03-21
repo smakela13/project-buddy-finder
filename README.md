@@ -10,7 +10,7 @@
 
 ## Description
 
-Buddy Finder is a website designed to find loving homes for abandoned pets. Project SARD aims to rescue all animals in need across the nation.
+*Buddy Finder is a website designed to find loving homes for abandoned pets. Project SARD aims to rescue all animals in need across the nation.*
 
 Do you want to find a rescue animal to spend your life with?
 
