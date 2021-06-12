@@ -35,8 +35,8 @@ function getToken() {
             }
         }).catch((error) => {
             // NECESSARY CONSOLE LOG
-            console.log("Something went wrong with Petfinder API call");
-            console.log(error);
+            console.error("Something went wrong with Petfinder API call");
+            console.error(error);
         });
 }
 
@@ -45,7 +45,7 @@ function getParZipCode() {
     // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var parZipCode = document.location.search.split('=').pop();
     searchPetfinder(parZipCode);
-  }
+}
 
 // SEARCHING PETFINDER WITH ZIP CODE AND TOKEN
 // Uses fetchToPetfinder when making fetch calls to Petfinder api, you have to use function fetchToPetfinder!
@@ -56,7 +56,7 @@ function searchPetfinder(zipCode) {
             petfinderOrganizationUrl = "https://api.petfinder.com/v2/organizations/?location=" + zipCode + "&distance=10&limit=5";
         }
 
-        // function call #4: Calls to initiate fetchToPetFinder function to fetch data with token
+        // function calls to initiate fetchToPetFinder function to fetch data with token
         fetchToPetfinder(petfinderOrganizationUrl, function (petfinderResult) {
             if (petfinderResult.organizations.length===0) {
                 var modalalert = document.getElementById("modal1");
@@ -65,7 +65,7 @@ function searchPetfinder(zipCode) {
                 instance.open();
             } else {
                 for (var i = 0; i < petfinderResult.organizations.length; i++) {
-                    // function call #5: Calls to print the results
+                    // function calls to print the results
                     printPetfinderResults(petfinderResult.organizations[i]);
                 }
             }
@@ -90,8 +90,8 @@ function fetchToPetfinder(url, callback) {
             callback(data);
         }).catch((error) => {
             // NECESSARY CONSOLE LOG
-            console.log("Something went wrong with Petfinder API call");
-            console.log(error);
+            console.error("Something went wrong with Petfinder API call");
+            console.error(error);
         });
 }
 

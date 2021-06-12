@@ -1,12 +1,10 @@
-// _______PETFINDER SCRIPT STARTS HERE_______
-
-
 // Form element variable
 var buddyFormEl = document.querySelector("#buddy-form");
 // SUBMIT EVENT
 buddyFormEl.addEventListener('submit', formSubmitHandler);
 // Input element variable
 var inputEl = document.querySelector("#zipcode");
+var cardContainerEl = document.querySelector('#previously-viewed');
 
 // GETTING DATA FROM LOCAL STORAGE
 function getStoredOrgs() {
@@ -17,7 +15,7 @@ function getStoredOrgs() {
         var prevViewedHeader = document.querySelector("#previously-viewed-header");
         var orgPrevViewed = document.querySelector("#previously-viewed");
         var storedBtn = document.createElement("div");
-        
+
         prevViewedHeader.textContent = "Previously Viewed Shelters";
         storedBtn.classList.add("card-panel", "card-index", "waves-effect", "waves-light", "deep-orange", "lighten-2", "center-align", "text-white");
         var prevLink = storedOrg.website;
@@ -38,6 +36,7 @@ function getStoredOrgs() {
 
         // RESETTING THE LOCAL STORAGE
         var resetBtn = document.querySelector("#reset");
+        resetBtn.classList.add("visible");
         resetBtn.addEventListener("click", function(event){
             event.preventDefault();  
             window.localStorage.clear();
@@ -56,7 +55,7 @@ function formSubmitHandler(event) {
     // ZIP CODE TEST
     function validateZipCode(elementValue){
         var zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
-         return zipCodePattern.test(elementValue);
+        return zipCodePattern.test(elementValue);
     }
     var validZipTest = validateZipCode(zipCodeEntered);
 
@@ -82,7 +81,7 @@ closeModal.addEventListener("click", function() {
     location.reload();
 });
 
-// SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// SEARCHING PETFINDER WITH ZIPCODE AND TOKEN WILL HAPPEN ON THE SECOND PAGE
 
 buddyFormEl.addEventListener('submit', formSubmitHandler);
 
