@@ -46,7 +46,7 @@
                                 <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
                             </div>
                             <div class="input-field col center s1 l1">
-                                <button class="btn waves-effect waves-light teal    accent-4 modal-trigger" id="search-button"             data-target="modal1"><i 
+                                <button class="btn waves-effect waves-light teal accent-4 modal-trigger" id="search-button" data-target="modal1"><i 
                                     class="material-icons">search</i>
                                 </button>
                             </div>
@@ -59,7 +59,7 @@
         <h5 id="previously-viewed-header" class="center"></h5>
         <div class="col center">
             <p>
-                <button id="reset" class="btn waves-effect waves-light teal accent-4 modal-trigger">Clear</button>
+                <button id="reset" class="btn waves-effect waves-light teal accent-4 modal-trigger hidden">Clear</button>
             </p>
         </div>
         <div id="previously-viewed" class="col s12 m7 l9 center"></div>
@@ -153,10 +153,10 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Invalid Input!</h4>
-            <p>Please enter a ZIP code</p>
+            <p>Please enter a valid ZIP code</p>
         </div>
         <div class="modal-footer">
-          <a id="x" href="#!" class="modal-close waves-effect waves-green btn-flat">Try Again</a>
+        <a id="x" href="#!" class="modal-close waves-effect waves-green btn-flat">Try Again</a>
         </div>
     </div>
     <!-- Scripts -->
