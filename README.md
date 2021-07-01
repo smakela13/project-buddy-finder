@@ -49,7 +49,7 @@ A wireframe showing the page's design. Wireframe was created using
 ## Credits
 
 Buddy Finder is a coding project done by Project SARD. The team members are:
-* Sarah Mäkelä - [https://github.com/smakela13/](https://github.com/smakela13/)
+* Soma Mäkelä - [https://github.com/smakela13/](https://github.com/smakela13/)
 * Ali Aran - [https://github.com/AranATA/](https://github.com/AranATA/)
 * Richard Yvarra - [https://github.com/Vinyl77/](https://github.com/Vinyl77/)
 * Dwayne Hovington - [https://github.com/hov92/](https://github.com/hov92/)
