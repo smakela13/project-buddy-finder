@@ -1,13 +1,5 @@
 # Buddy Finder
 
-## Table of Contents
-
-* [Description](#description)
-* [Usage](#usage)
-* [Wireframe](#wireframe)
-* [Credits](#credits)
-* [License](#license)
-
 ## Description
 
 *Buddy Finder is a website designed to find loving homes for abandoned pets. Project SARD aims to rescue all animals in need across the nation.*
@@ -23,6 +15,14 @@ When you return back to the page, your search history will appear on the homepag
 Love is right around the corner! Search for your forever pet today.
 
 Buddy Finder uses JavaScript, HTML, CSS, [Materialize CSS](https://materializecss.com/), [GoogleFonts](https://fonts.google.com/), [Material Icons](https://material.io/resources/icons/), and a [Favicon Generator](https://favicon.io/favicon-generator/). It uses the [Petfinder API](https://www.petfinder.com/developers/) to retrieve information on rescue shelters, [LeafletJS](https://leafletjs.com/) and [Mapbox](https://docs.mapbox.com/) to display the map for the selected shelters.
+
+## Table of Contents
+
+* [Description](#description)
+* [Usage](#usage)
+* [Wireframe](#wireframe)
+* [Credits](#credits)
+* [License](#license)
 
 ## Usage
 
